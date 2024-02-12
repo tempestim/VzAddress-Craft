@@ -116,6 +116,14 @@ class Address extends Field
      */
     public function normalizeValue(mixed $value, ?craft\base\ElementInterface $element = null): mixed
     {
+        /**
+         * Just return value if it's already a VzAddress.
+         */
+        if ($value instanceof \elivz\vzaddress\models\Address)
+        {
+            return $value;
+        }
+
         if (is_string($value) && !empty($value))
         {
             $value = Json::decodeIfJson($value);
@@ -125,8 +133,11 @@ class Address extends Field
         if (isset($value['__model__'])) {
             unset($value['__model__']);
         }
+        if (array_key_exists('countryName', $value)) {
+            unset($value['countryName']);
+        }
 
-        if (isset($value))
+        if (isset($value) && is_array($value))
         {
             $model = new AddressModel($value);
         }

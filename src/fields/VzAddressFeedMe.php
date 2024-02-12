@@ -20,7 +20,7 @@ class VzAddressFeedMe extends Field implements FieldInterface
     // Templates
     // =========================================================================
 
-    public function getMappingTemplate()
+    public function getMappingTemplate(): string
     {
         return 'vzaddress/integrations/feedme';
     }
@@ -29,7 +29,7 @@ class VzAddressFeedMe extends Field implements FieldInterface
     // Public Methods
     // =========================================================================
 
-    public function parseField()
+    public function parseField(): mixed
     {
         $preppedData = [];
         $fields = Hash::get($this->fieldInfo, 'fields');
