@@ -133,7 +133,7 @@ class Address extends Field
         if (isset($value['__model__'])) {
             unset($value['__model__']);
         }
-        if (array_key_exists('countryName', $value)) {
+        if (isset($value) && array_key_exists('countryName', $value)) {
             unset($value['countryName']);
         }
 
