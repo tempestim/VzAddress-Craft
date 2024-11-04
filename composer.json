@@ -2,7 +2,7 @@
   "name": "superbig/craft-vzaddress",
   "description": "A simple address field for Craft.",
   "type": "craft-plugin",
-  "version": "2.0.0-beta.5",
+  "version": "2.0.1-beta.5",
   "keywords": [
     "craft",
     "cms",
@@ -31,7 +31,7 @@
     }
   },
   "require": {
-    "craftcms/cms": "^4.0.0",
+    "craftcms/cms": "^5.0.0",
     "ext-json": "*"
   },
   "require-dev": {

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * VZ Address plugin for Craft CMS 3.x
+ * VZ Address plugin for Craft CMS 5.x
  *
  * A simple address field for Craft.
  *
