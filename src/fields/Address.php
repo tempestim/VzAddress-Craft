@@ -64,7 +64,9 @@ class Address extends Field
     {
         parent::init();
 
-        $this->defaultCountry = Craft::$app->getLocale()->getTerritoryID();
+        // get site locale and use territory as default country ( not user locale since that may be different from site locale )
+        $locale = Craft::$app->getI18n()->getLocaleById( Craft::$app->getSites()->getCurrentSite()->language );
+        $this->defaultCountry = $locale->getTerritoryID();
     }
 
     /**
